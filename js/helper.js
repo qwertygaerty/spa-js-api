@@ -1,5 +1,5 @@
 
-let host = "https://jurapro.bhuser.ru/api-cafe";
+let host = "http://dyyiaca-m2.wsr.ru/public/api-cafe";
 
 let f = async (url, method="get",token=false, data=[]) => {
     let options = {

@@ -55,7 +55,7 @@ export default class User extends HTMLElement {
                        Name: ${this.name}, Status: ${this.status}, Group: ${this.group}
                        
                        <div class="buttons">
-                       <button data-click="see">Просмотр</button>   
+                       <button data-click="see" data-id="${this.id}">Просмотр</button>   
                        <button  style="background: firebrick; color: white">Уволить</button>     
                         </div>
 
@@ -67,11 +67,11 @@ export default class User extends HTMLElement {
     }
 
     clickButton(e) {
-        this[e.target.dataset.click]();
+        this[e.target.dataset.click](e);
     }
 
-    see(id) {
-        console.log(id)
+    see(e) {
+        console.log(e.target.dataset.id);
     }
 
 }
