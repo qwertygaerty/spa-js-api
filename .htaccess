@@ -1,15 +1,3 @@
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-#RewriteCond %{REQUEST_URI} !^/js/
-#RewriteCond %{REQUEST_URI} !^/css/
-RewriteRule ^(.*)$ index/index.html
+ RewriteEngine On
+ RewriteRule ^(.*)$ public/$1
 
-#401 Авторизация не выполнена
-ErrorDocument 401 http://localhost/
-#403 Доступ запрещен
-ErrorDocument 403 http://localhost/
-#404 Страница не найдена
-ErrorDocument 404 http://localhost/
-#500 Внутренняя ошибка сервера
-ErrorDocument 500 http://localhost/
