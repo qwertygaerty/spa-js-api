@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ServiceUpdateRequest extends FormRequest
+class ServiceUpdateRequest extends ApiRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class ServiceUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class ServiceUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "name"=>["required"],
+            "price"=>["required"],
+            "description"=>["required"],
+            "img"=>["img:png,jpg"],
+            "position"=>["int"],
         ];
     }
 }

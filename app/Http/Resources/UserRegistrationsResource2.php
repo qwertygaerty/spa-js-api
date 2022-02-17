@@ -14,6 +14,14 @@ class UserRegistrationsResource2 extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+
+        return [
+            "id"=>$this->id,
+            "url"=>$this->url,
+            "name"=>$this->name,
+            "price"=>$this->price,
+            "description"=>$this->description,
+            "position"=>$this->position,
+        ];
     }
 }
